@@ -844,7 +844,7 @@ do
       local path = api.nvim_buf_get_name(bufnr)
       local payload = {
         source = {
-          path = path;
+          path = vim.fn.fnamemodify(path, ':.');
           name = vim.fn.fnamemodify(path, ':t')
         };
         sourceModified = false;
