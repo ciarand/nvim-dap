@@ -512,7 +512,7 @@ local function frame_to_bufnr(session, frame)
     if scheme then
       return vim.uri_to_bufnr(source.path)
     else
-      return vim.uri_to_bufnr(vim.uri_from_fname("./" .. source.path))
+      return vim.uri_to_bufnr(vim.uri_from_fname(vim.fn.getcwd() .. "/" .. source.path))
     end
   end
   local co = coroutine.running()
